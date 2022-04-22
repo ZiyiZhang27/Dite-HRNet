@@ -1,0 +1,16 @@
+chumpy
+dataclasses; python_version == '3.6'
+json_tricks
+matplotlib
+munkres
+numpy
+opencv-python
+pillow
+scipy
+pandas
+torchvision
+xtcocotools>=1.6
+future
+tensorboard
+mmpose == 0.16.0
+poseval@git+https://github.com/svenkreiss/poseval.git
