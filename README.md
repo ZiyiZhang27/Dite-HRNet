@@ -1,22 +1,30 @@
 # Dite-HRNet: Dynamic Lightweight High-Resolution Network for Human Pose Estimation
 
 ## Introduction
-This is an official PyTorch implementation of our IJCAI-ECAI 2022 paper Dite-HRNet: Dynamic Lightweight High-Resolution Network for Human Pose Estimation.
+This is an official PyTorch implementation of our IJCAI-ECAI 2022 paper "***Dite-HRNet: Dynamic Lightweight High-Resolution Network for Human Pose Estimation***" (arXiv preprint will be available soon). We present a Dynamic lightweight High-Resolution Network (Dite-HRNet), which can efficiently extract multi-scale contextual information and model long-range spatial dependency for human pose estimation. Specifically, we propose two methods, dynamic split convolution and adaptive context modeling, and embed them into two novel lightweight blocks, which are named Dynamic Multi-scale Context (DMC) block and Dynamic Global Context (DGC) block. These two blocks, as the basic component units of our Dite-HRNet, are specially designed for the high-resolution networks to make full use of the parallel multi-resolution architecture. Experimental results show that the proposed network achieves superior performance on both COCO and MPII human pose estimation datasets, surpassing the state-of-the-art lightweight networks.
 
-## Results and models
+- The Dite-HRNet architecture:
 
-### Results on COCO val2017 with detector having human AP of 56.4 on COCO val2017 dataset
+![Dite-HRNet](./resources/Dite-HRNet.png)
 
-| Arch  | Input Size | #Params | FLOPs | AP | AP<sup>50</sup> | AP<sup>75</sup> | AP<sup>M</sup> | AP<sup>L</sup> | AR | AR<sup>50</sup> | AR<sup>75</sup> | AR<sup>M</sup> | AR<sup>L</sup> |
+- The DMC block and DGC block:
+
+![dynamic_blocks](./resources/dynamic_blocks.png)
+
+## Models and results
+
+#### Results on COCO `val2017` with detector having human AP of 56.4 on COCO `val2017` dataset
+
+| Model | Input Size | #Params | FLOPs | AP | AP<sup>50</sup> | AP<sup>75</sup> | AP<sup>M</sup> | AP<sup>L</sup> | AR | AR<sup>50</sup> | AR<sup>75</sup> | AR<sup>M</sup> | AR<sup>L</sup> |
 | :----------------- | :-----------: | :------: | :-----------: | :------: |:------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
 | [Dite-HRNet-18](/configs/top_down/dite_hrnet/coco/ditehrnet_18_coco_256x192.py) | 256x192 | 1.1M | 209.8M |0.659 | 0.873 | 0.740 | 0.632 | 0.716 | 0.721 | 0.916 | 0.793 | 0.683 | 0.776 |
 | [Dite-HRNet-30](/configs/top_down/dite_hrnet/coco/ditehrnet_30_coco_256x192.py) | 256x192 | 1.8M | 329.8M | 0.683 | 0.882 | 0.762 | 0.655 | 0.741 | 0.742 | 0.926 | 0.812 | 0.704 | 0.797 |
 | [Dite-HRNet-18](/configs/top_down/dite_hrnet/coco/ditehrnet_18_coco_384x288.py) | 384x288 | 1.1M | 471.8M | 0.690 | 0.880 | 0.760 | 0.655 | 0.755 | 0.750 | 0.922 | 0.814 | 0.708 | 0.810 |
 | [Dite-HRNet-30](/configs/top_down/dite_hrnet/coco/ditehrnet_30_coco_384x288.py) | 384x288 | 1.8M | 741.7M | 0.715 | 0.889 | 0.782 | 0.682 | 0.777 | 0.772 | 0.928 | 0.833 | 0.732 | 0.831 |
 
-### Results on MPII val set
+#### Results on MPII `val` dataset
 
-| Arch  | Input Size | #Params | FLOPs | PCKh@0.5 | PCKh@0.1 |
+| Model | Input Size | #Params | FLOPs | PCKh@0.5 | PCKh@0.1 |
 | :--- | :--------: | :------: | :--------: | :------: | :------: |
 | [Dite-HRNet-18](/configs/top_down/dite_hrnet/mpii/ditehrnet_18_mpii_256x256.py) | 256x256 | 1.1M | 279.5M | 0.870 | 0.311 |
 | [Dite-HRNet-30](/configs/top_down/dite_hrnet/mpii/ditehrnet_30_mpii_256x256.py) | 256x256 | 1.8M | 439.5M | 0.876 | 0.317 |
@@ -238,6 +246,19 @@ python tools/summary_network.py configs/top_down/dite_hrnet/coco/ditehrnet_18_co
     --shape 256 256 \
 ```
 
+## Citation
+
+If you find this project useful in your research, please consider cite:
+
+```
+@article{LiZXZB22,
+  title={Dite-HRNet: Dynamic Lightweight High-Resolution Network for Human Pose Estimation},
+  author={Qun Li and Ziyi Zhang and Fu Xiao and Feng Zhang and Bir Bhanu},
+  booktitle={IJCAI-ECAI},
+  year={2022}
+}
+```
+
 ## Acknowledgement
 
 Thanks to:
@@ -245,3 +266,4 @@ Thanks to:
 - [MMPose](https://github.com/open-mmlab/mmpose)
 - [HRNet](https://github.com/HRNet/deep-high-resolution-net.pytorch)
 - [Lite-HRNet](https://github.com/HRNet/Lite-HRNet)
+
