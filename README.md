@@ -32,7 +32,6 @@ This is an official PyTorch implementation of our IJCAI-ECAI 2022 paper [***Dite
 ## Environment
 
 The code is developed and tested using python 3.6 and 8 GeForce RTX 3090 GPUs. Other python versions or GPUs are not fully tested.
-## Quick Start
 
 #### Requirements
 
@@ -47,8 +46,10 @@ The code is developed and tested using python 3.6 and 8 GeForce RTX 3090 GPUs. O
 - json_tricks
 - [xtcocotools](https://github.com/jin-s13/xtcocoapi)
 
+## Quick Start
 
-#### Installation
+
+### 1. Installation
 <!-- The code is based on [MMPose](https://github.com/open-mmlab/mmpose).
 You need clone the mmpose project and integrate the codes into mmpose first. -->
 
@@ -84,7 +85,7 @@ b. Install build requirements
 pip install -r requirements.txt
 ```
 
-#### Prepare datasets
+### 2. Prepare datasets
 
 It is recommended to symlink the dataset root to `$DITE_HRNET/data`.
 If your folder structure is different, you may need to change the corresponding paths in config files.
@@ -144,7 +145,7 @@ dite_hrnet
 ```
 
 ## Training and Testing
-#### Training
+### 1. Training
 
 All outputs (log files and checkpoints) will be saved to the working directory,
 which is specified by `work_dir` in the config file.
@@ -193,7 +194,7 @@ Examples:
 ./tools/dist_train.sh configs/top_down/dite_hrnet/mpii/ditehrnet_18_mpii_256x256.py 8
 ```
 
-#### Testing
+### 2. Testing
 You can use the following commands to test a dataset.
 
 ```shell
@@ -230,7 +231,7 @@ Example:
     --eval mAP
 ```
 
-#### Computing model complexity
+### 3. Computing model complexity
 You can use the following commands to compute the complexity of one model.
 ```shell
 python tools/summary_network.py ${CONFIG_FILE} --shape ${SHAPE}
