@@ -466,7 +466,7 @@ class DenseContextModeling(nn.Module):
         return out
 
 
-class DynamicMutiScaleContextBlock(nn.Module):
+class DynamicMultiScaleContextBlock(nn.Module):
 
     def __init__(self, in_channels, stride, with_cp=False):
         super().__init__()
@@ -694,7 +694,7 @@ class DiteHRModule(nn.Module):
         layers = []
         for i in range(num_blocks):
             layers.append(
-                DynamicMutiScaleContextBlock(
+                DynamicMultiScaleContextBlock(
                     self.in_channels,
                     stride=stride,
                     with_cp=self.with_cp))
