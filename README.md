@@ -252,8 +252,8 @@ python tools/summary_network.py configs/top_down/dite_hrnet/coco/ditehrnet_18_co
 If you find this project useful in your research, please consider cite:
 
 ```
-@article{LiZXZB22,
-  title={Dite-HRNet: Dynamic Lightweight High-Resolution Network for Human Pose Estimation},
+@inproceedings{LiZXZB22,
+  title={{Dite-HRNet}: Dynamic Lightweight High-Resolution Network for Human Pose Estimation},
   author={Qun Li and Ziyi Zhang and Fu Xiao and Feng Zhang and Bir Bhanu},
   booktitle={IJCAI-ECAI},
   year={2022}
