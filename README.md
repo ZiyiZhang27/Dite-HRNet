@@ -242,9 +242,9 @@ python tools/summary_network.py ${CONFIG_FILE} --shape ${SHAPE}
 Example:
 
 ```shell
-# compute the complexity of DiteHRNet-18 with 256x256 resolution input.
+# compute the complexity of DiteHRNet-18 with 256x192 resolution input.
 python tools/summary_network.py configs/top_down/dite_hrnet/coco/ditehrnet_18_coco_256x192.py \
-    --shape 256 256 \
+    --shape 256 192 \
 ```
 
 ## Citation
