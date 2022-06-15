@@ -187,10 +187,10 @@ Difference between `resume-from` and `load-from`:
 Examples:
 
 ```shell
-# train on COCO dataset with 8 GPUs
+# train DiteHRNet-18 on COCO dataset with 8 GPUs
 ./tools/dist_train.sh configs/top_down/dite_hrnet/coco/ditehrnet_18_coco_256x192.py 8
 
-# train on MPII dataset with 8 GPUs
+# train DiteHRNet-18 on MPII dataset with 8 GPUs
 ./tools/dist_train.sh configs/top_down/dite_hrnet/mpii/ditehrnet_18_mpii_256x256.py 8
 ```
 
@@ -225,7 +225,7 @@ Optional arguments:
 Example:
 
 ```shell
-# test DiteHRNet-18 on COCO (without saving the test results) with 8 GPUS, and evaluate the mAP.
+# test DiteHRNet-18 on COCO (without saving the test results) dataset with 8 GPUS, and evaluate the mAP.
 ./tools/dist_test.sh configs/top_down/dite_hrnet/coco/ditehrnet_18_coco_256x192.py \
     checkpoints/SOME_CHECKPOINT.pth 8 \
     --eval mAP
